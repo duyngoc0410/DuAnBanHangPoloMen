@@ -52,16 +52,12 @@ public class ViewNhanVien extends javax.swing.JPanel {
         lblSoDienThoai = new javax.swing.JLabel();
         lblGioiTinh = new javax.swing.JLabel();
         lblDiaChi = new javax.swing.JLabel();
-        lblNgayTao = new javax.swing.JLabel();
         rdoNam = new javax.swing.JRadioButton();
         rdoNu = new javax.swing.JRadioButton();
-        jdaNgayTao = new com.toedter.calendar.JDateChooser();
         txtHoTen = new javax.swing.JTextField();
         txtSoDienThoai = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDiaChi = new javax.swing.JTextArea();
-        lblNgayTao1 = new javax.swing.JLabel();
-        jdaNgaySua = new com.toedter.calendar.JDateChooser();
         txtMaNV = new javax.swing.JTextField();
         lblHoTen1 = new javax.swing.JLabel();
         txtmatKhau = new javax.swing.JTextField();
@@ -105,11 +101,6 @@ public class ViewNhanVien extends javax.swing.JPanel {
         lblDiaChi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblDiaChi.setText("Địa chỉ");
 
-        lblNgayTao.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        lblNgayTao.setForeground(new java.awt.Color(255, 253, 246));
-        lblNgayTao.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblNgayTao.setText("Ngày tạo");
-
         rdoNam.setBackground(new java.awt.Color(128, 203, 196));
         buttonGroup1.add(rdoNam);
         rdoNam.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -132,9 +123,6 @@ public class ViewNhanVien extends javax.swing.JPanel {
             }
         });
 
-        jdaNgayTao.setDateFormatString("dd/MM/yyyy");
-        jdaNgayTao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
         txtHoTen.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         txtSoDienThoai.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -143,14 +131,6 @@ public class ViewNhanVien extends javax.swing.JPanel {
         txtDiaChi.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtDiaChi.setRows(5);
         jScrollPane1.setViewportView(txtDiaChi);
-
-        lblNgayTao1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        lblNgayTao1.setForeground(new java.awt.Color(255, 253, 246));
-        lblNgayTao1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblNgayTao1.setText("Ngày Sửa");
-
-        jdaNgaySua.setDateFormatString("dd/MM/yyyy");
-        jdaNgaySua.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         txtMaNV.setEditable(false);
         txtMaNV.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -192,26 +172,18 @@ public class ViewNhanVien extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblHoTen1)
-                                    .addComponent(lblHoTen)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(rdoNam)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(rdoNu))
-                                    .addComponent(lblGioiTinh)
-                                    .addComponent(lblGioiTinh1))
-                                .addGap(184, 184, 184)))
-                        .addGap(0, 56, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblHoTen1)
+                        .addComponent(lblHoTen)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addComponent(rdoNam)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(rdoNu))
+                        .addComponent(lblGioiTinh)
+                        .addComponent(lblGioiTinh1)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblNgayTao1)
-                            .addComponent(lblNgayTao)
                             .addComponent(lblHoTen2)
                             .addComponent(lblSoDienThoai)
                             .addComponent(txtMaNV)
@@ -220,16 +192,14 @@ public class ViewNhanVien extends javax.swing.JPanel {
                             .addComponent(txtSoDienThoai)
                             .addComponent(lblSoDienThoai1)
                             .addComponent(txtEmail)
-                            .addComponent(jdaNgayTao, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                            .addComponent(jdaNgaySua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblDiaChi)
-                            .addComponent(txtChucVu))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(txtChucVu))))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblGioiTinh, lblNgayTao, lblSoDienThoai});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblGioiTinh, lblSoDienThoai});
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jScrollPane1, jdaNgayTao, txtHoTen, txtSoDienThoai});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtHoTen, txtSoDienThoai});
 
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,24 +237,16 @@ public class ViewNhanVien extends javax.swing.JPanel {
                 .addComponent(lblSoDienThoai1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblNgayTao, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jdaNgayTao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblNgayTao1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jdaNgaySua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(lblDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86))
         );
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblDiaChi, lblGioiTinh, lblHoTen, lblNgayTao, lblSoDienThoai});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblDiaChi, lblGioiTinh, lblHoTen, lblSoDienThoai});
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jdaNgayTao, txtHoTen, txtSoDienThoai});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtHoTen, txtSoDienThoai});
 
         jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {rdoNam, rdoNu});
 
@@ -417,7 +379,7 @@ public class ViewNhanVien extends javax.swing.JPanel {
         int selectedRow = tblNhanVien.getSelectedRow();
 
         if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "Vui lòng chọn sản phẩm cần sửa!", "Thông báo", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn Nhân viên cần sửa!", "Thông báo", JOptionPane.WARNING_MESSAGE);
             return;
         }
         NhanVienResponse kh = nvrepo.getAll().get(selectedRow);
@@ -430,8 +392,6 @@ public class ViewNhanVien extends javax.swing.JPanel {
         String email = txtEmail.getText();
         String soDienThoai = txtSoDienThoai.getText();
         String chucVu = txtChucVu.getText();
-        Date ngayTao = jdaNgayTao.getDate();
-        Date ngaySua = jdaNgaySua.getDate();
 
         kh.setTenNhanVien(hoTen);
         kh.setDiaChi(diaChi);
@@ -440,12 +400,10 @@ public class ViewNhanVien extends javax.swing.JPanel {
         kh.setEmail(email);
         kh.setSoDienThoai(soDienThoai);
         kh.setChucVu(chucVu);
-        kh.setNgayTao(ngayTao);
-        kh.setNgaySua(ngaySua);
-        boolean success = nvrepo.sua(kh.getId(), kh);
+        boolean success = nvrepo.sua(kh.getMaNhanVien(), kh);
 
         if (success) {
-            JOptionPane.showMessageDialog(this, "Cập nhật khách hàng thành công!");
+            JOptionPane.showMessageDialog(this, "Cập nhật nhân viên thành công!");
             list_nv = nvrepo.getAll();
             fillTable(list_nv); // Cập nhật lại bảng
         } else {
@@ -463,8 +421,6 @@ try {
             String email = txtEmail.getText().trim();
             String soDienThoai = txtSoDienThoai.getText().trim();
             String chucVu = txtChucVu.getText().trim();
-            Date ngayTao = (jdaNgayTao.getDate() != null) ? new Date(jdaNgayTao.getDate().getTime()) : null;
-            Date ngaySua = (jdaNgaySua.getDate() != null) ? new Date(jdaNgaySua.getDate().getTime()) : null;
             int trangThai = 1;
 
             // Kiểm tra rỗng
@@ -494,8 +450,6 @@ try {
             kh.setEmail(email);
             kh.setSoDienThoai(soDienThoai);
             kh.setChucVu(chucVu);
-            kh.setNgayTao(ngayTao);
-            kh.setNgaySua(ngaySua);
             kh.setTrangThai(trangThai);
 
             // Gọi repo để thêm (không cần set mã nếu mã tự tăng)
@@ -517,12 +471,10 @@ try {
         txtHoTen.setText("");
         txtSoDienThoai.setText("");
         rdoNam.isSelected();
-        jdaNgayTao.setDate(null);
         txtDiaChi.setText("");
         txtMaNV.setText("");
         txtmatKhau.setText("");
         txtEmail.setText("");
-        jdaNgayTao.setDate(null);
         txtChucVu.setText("");
     }//GEN-LAST:event_btnMoiActionPerformed
 
@@ -541,8 +493,6 @@ try {
         txtEmail.setText(kh.getEmail());
         txtSoDienThoai.setText(kh.getSoDienThoai());
         txtChucVu.setText(kh.getChucVu());
-        jdaNgaySua.setDate(kh.getNgaySua());
-        jdaNgayTao.setDate(kh.getNgayTao());
 
     }//GEN-LAST:event_tblNhanVienMouseClicked
 
@@ -575,16 +525,12 @@ try {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private com.toedter.calendar.JDateChooser jdaNgaySua;
-    private com.toedter.calendar.JDateChooser jdaNgayTao;
     private javax.swing.JLabel lblDiaChi;
     private javax.swing.JLabel lblGioiTinh;
     private javax.swing.JLabel lblGioiTinh1;
     private javax.swing.JLabel lblHoTen;
     private javax.swing.JLabel lblHoTen1;
     private javax.swing.JLabel lblHoTen2;
-    private javax.swing.JLabel lblNgayTao;
-    private javax.swing.JLabel lblNgayTao1;
     private javax.swing.JLabel lblSoDienThoai;
     private javax.swing.JLabel lblSoDienThoai1;
     private javax.swing.JLabel lblTimKiem;
