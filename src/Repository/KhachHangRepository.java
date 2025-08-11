@@ -54,7 +54,7 @@ public class KhachHangRepository {
                                        ,[NgayTao]
                                        ,[TrangThai])
                                  VALUES
-                                       (?,?,?,?,?,1)
+                                       (?,?,?,?,GETDATE(),1)
                             """;
         ArrayList<KhachHangResponse> listKhachHang = new ArrayList<>();
         int check = 0;
@@ -63,8 +63,6 @@ public class KhachHangRepository {
             ps.setBoolean(2, kh.isGioiTinh());
             ps.setString(3, kh.getSoDienThoai());
             ps.setString(4, kh.getDiaChi());
-            java.sql.Date sqlDate = new java.sql.Date(kh.getNgayTao().getTime());
-            ps.setDate(5, sqlDate);
 
             check = ps.executeUpdate();
         } catch (Exception e) {
@@ -82,7 +80,6 @@ public class KhachHangRepository {
                           ,[GioiTinh] = ?
                           ,[SoDienThoai] = ?
                           ,[DiaChi] = ?
-                          ,[NgayTao] = ?
                      WHERE Id = ?
                     """;
 //        ArrayList<KhachHangResponse> listKhachHang = new ArrayList<>();
@@ -91,9 +88,7 @@ public class KhachHangRepository {
             ps.setBoolean(2, kh.isGioiTinh());
             ps.setString(3, kh.getSoDienThoai());
             ps.setString(4, kh.getDiaChi());
-            java.sql.Date sqlDate = new java.sql.Date(kh.getNgayTao().getTime());
-            ps.setDate(5, sqlDate);
-            ps.setInt(6, id);
+            ps.setInt(5, id);
             check = ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace(System.out);

@@ -5,8 +5,10 @@ import Response.KhachHangResponse;
 import Response.NhanVienResponse;
 import java.util.ArrayList;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 
 public class NhanVienRepository {
 
@@ -61,10 +63,9 @@ public class NhanVienRepository {
                                             ,[SoDienThoai]
                                             ,[ChucVu]
                                             ,[NgayTao]
-                                            ,[NgaySua]
                                             ,[TrangThai])
                                       VALUES
-                                       (?,?,?,?,?,?,?,?,?,?)
+                                       (?,?,?,?,?,?,?,GETDATE(),?)
                             """;
         ArrayList<NhanVienResponse> listNhanVien = new ArrayList<>();
         int check = 0;
@@ -76,10 +77,7 @@ public class NhanVienRepository {
             ps.setString(5, nv.getEmail());
             ps.setString(6, nv.getSoDienThoai());
             ps.setString(7, nv.getChucVu());
-            java.sql.Date sqlDate = new java.sql.Date(nv.getNgayTao().getTime());
-            ps.setDate(8, sqlDate);
-            ps.setDate(9, sqlDate);
-            ps.setInt(10, nv.getTrangThai());
+            ps.setInt(8, nv.getTrangThai());
 
             check = ps.executeUpdate();
         } catch (Exception e) {
@@ -89,7 +87,7 @@ public class NhanVienRepository {
         return check > 0;
     }
 
-    public boolean sua(Integer id, NhanVienResponse nv) {
+    public boolean sua(String id, NhanVienResponse nv) {
         int check = 0;
         String sql = """
                     UPDATE [dbo].[NhanVien]
@@ -100,8 +98,7 @@ public class NhanVienRepository {
                            ,[Email] = ?
                            ,[SoDienThoai] = ?
                            ,[ChucVu] = ?
-                           ,[NgayTao] = ?
-                           ,[NgaySua] = ?
+                           ,[NgaySua] = GETDATE()
                            ,[TrangThai] = ?
                       WHERE MaNhanVien = ?
                     """;
@@ -114,12 +111,8 @@ public class NhanVienRepository {
             ps.setString(5, nv.getEmail());
             ps.setString(6, nv.getSoDienThoai());
             ps.setString(7, nv.getChucVu());
-            java.sql.Date sqlDate = new java.sql.Date(nv.getNgayTao().getTime());
-            ps.setDate(8, sqlDate);
-            java.sql.Date sqlDate1 = new java.sql.Date(nv.getNgaySua().getTime());
-            ps.setDate(9, sqlDate1);
-            ps.setInt(10, nv.getTrangThai());
-            ps.setInt(11, id);
+            ps.setInt(8, nv.getTrangThai());
+            ps.setString(9, id);
             check = ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace(System.out);
